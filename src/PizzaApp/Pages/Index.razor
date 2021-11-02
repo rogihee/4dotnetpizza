@@ -1,0 +1,23 @@
+﻿@page "/"
+@inject ILogger<Index> logger
+@implements IDisposable
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, Pizza!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code
+{
+    protected override void OnInitialized()
+    {
+        logger.LogInformation("Initialized Index Page");
+    }
+
+    public void Dispose()
+    {
+        logger.LogInformation("Dispose Index Page");
+    }
+}

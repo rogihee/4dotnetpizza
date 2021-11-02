@@ -1,0 +1,11 @@
+<Project>
+	<PropertyGroup>
+		<Version>4.4.4</Version>
+		<Authors>Rogier van der Hee</Authors>
+		<LangVersion>latest</LangVersion>
+		<SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+</Project>
