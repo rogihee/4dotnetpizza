@@ -2,6 +2,7 @@
 
 	<PropertyGroup>
 		<PublishTrimmed>true</PublishTrimmed>
+		<BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
 	</PropertyGroup>
 
 	<ItemGroup>

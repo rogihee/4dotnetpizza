@@ -1,0 +1,25 @@
+﻿@page "/pizza"
+
+@* TODO: watch out with page name, must be different than type *@
+
+@* TODO: new in .NET6: root components *@
+<PageTitle>Pizza</PageTitle>
+
+@if (Pizzas == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <PizzaGrid Items="@Pizzas"/>
+}
+
+@code
+{
+    private List<Pizza>? Pizzas { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Pizzas = await pizzaApiService.Get();
+    }
+}

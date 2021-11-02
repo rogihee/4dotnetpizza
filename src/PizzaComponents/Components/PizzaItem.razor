@@ -1,1 +1,34 @@
-﻿<h1 class="blink">Hoi</h1>
+﻿@if (Model != null)
+{
+    var culture = CultureInfo.GetCultureInfo("nl");
+    <div class="pizza">
+        <img class="pizza-img" src="@PizzaAssets.GetImage(Model.Name)" alt="@Model.Name"/>
+        <div class="name-ingredients">
+            <h2>@Model.Name</h2>
+            <span>@Model.Ingredients</span>
+        </div>
+        <div class="since-column">
+            <span class="since-label">Available since</span>
+            <span class="since">@Model.AvailableSince.ToString(culture.DateTimeFormat.ShortDatePattern)</span>
+        </div>
+        <div class="price-column">
+            <span class="price-label">Price</span>
+            @* TODO: this produces ¤ 11,25 *@
+            @*<span>@Model.Price.ToString("C", culture)</span>*@
+            <span class="price">@Model.Price.ToString("€ ##.00")</span>
+        </div>
+        <div class="profit-catcher">
+            @if (Model.SonderAngebot)
+            {
+                <img class="blink" src="@PizzaAssets.ProfitCatcher" alt="Sonder angebot!"/>
+            }
+        </div>
+        
+    </div>
+}
+
+@code
+{
+    [Parameter] 
+    public Pizza? Model { get; set; }
+}

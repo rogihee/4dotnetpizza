@@ -1,7 +1,8 @@
+// TODO 1: Minimal startup
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Add Pizza core services to the container.
+builder.Services.AddPizzaCoreServices();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 

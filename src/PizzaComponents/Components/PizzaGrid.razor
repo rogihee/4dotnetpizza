@@ -1,8 +1,16 @@
-﻿
-<PizzaItem />
+﻿<h1>Pizzas</h1>
+<div class="pizza-grid">
+    @foreach (var pizza in Items ?? Array.Empty<Pizza>())
+    {
+        <PizzaItem Model="@pizza" />
+    }
+</div>
 
 @code
 {
+    [Parameter]
+    public IEnumerable<Pizza>? Items { get; set; }
+
     protected override void OnInitialized()
     {
         base.OnInitialized();

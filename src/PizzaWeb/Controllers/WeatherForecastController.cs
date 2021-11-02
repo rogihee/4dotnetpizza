@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using PizzaShared;
 
 namespace PizzaWeb.Controllers;
 

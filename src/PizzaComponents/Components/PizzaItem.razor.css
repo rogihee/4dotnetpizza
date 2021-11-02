@@ -1,4 +1,66 @@
-﻿.blink {
+﻿.pizza {
+    /* TODO 1: CSS grid */
+    display: grid;
+    grid-template-columns: auto 1fr 7rem 5rem 6rem;
+    grid-column-gap: 0.5rem;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.pizza-img {
+    width: 120px;
+    height: 120px;
+}
+
+.name-ingredients {
+    display: flex;
+    flex-direction: column;
+}
+
+.since-column {
+    align-content: end;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+}
+
+.since-label {
+    font-size: 0.9rem;
+    color: rgb(180, 180, 180);
+}
+
+.since {
+    font-weight: bold;
+    width: 100%;
+    text-align: end;
+}
+
+.price-column {
+    align-content: end;
+    justify-self: end;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-label {
+    font-size: 0.9rem;
+    color: rgb(180, 180, 180);
+}
+
+.price {
+    font-weight: bold;
+    width: 100%;
+    text-align: end;
+}
+
+.profit-catcher > img {
+    width: 6rem;
+    height: 6rem;
+}
+
+.blink {
     animation: blink 1s steps(1, end) infinite;
 }
 

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<PropertyGroup>
 		<IsTrimmable>true</IsTrimmable>
@@ -9,11 +9,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\PizzaShared\PizzaShared.csproj" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0-rc.2.21480.10" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\PizzaShared\PizzaShared.csproj" />
 	</ItemGroup>
 
 </Project>
