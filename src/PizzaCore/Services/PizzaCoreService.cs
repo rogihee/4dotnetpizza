@@ -44,8 +44,8 @@ public class PizzaCoreService
         _logger = logger;
         var timer = new Timer(5000);
         timer.Elapsed += TimerElapsed;
-        // TODO: enable for special offers
-        // timer.Start();
+        // TODO 13: enable for special offers
+        timer.Start();
     }
 
     private async void TimerElapsed(object? sender, ElapsedEventArgs e)

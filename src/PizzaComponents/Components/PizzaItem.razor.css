@@ -1,5 +1,5 @@
 ﻿.pizza {
-    /* TODO 1: CSS grid */
+    /* TODO 01: CSS grid */
     display: grid;
     grid-template-columns: auto 1fr 7rem 5rem 6rem;
     grid-column-gap: 0.5rem;

@@ -1,4 +1,4 @@
-﻿// TODO 2: C# 10 global usings
+﻿// TODO 02: C# 10 global usings
 global using Microsoft.Extensions.Logging;
 
 global using PizzaShared.Models;

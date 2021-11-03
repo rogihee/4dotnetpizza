@@ -2,10 +2,10 @@
 
 public class PizzaAssets
 {
-    // TODO 3: asset path in class libraries
+    // TODO 07: asset path in class libraries
     public const string LibPath = "/_content/pizzacomponents/";
 
-    // TODO 2: C# 10 const in const
+    // TODO 08: C# 10 const in const
     public const string Placeholder = $"{LibPath}images/placeholder.png";
     public const string ProfitCatcher = $"{LibPath}images/profitcatcher.png";
 
@@ -18,7 +18,7 @@ public class PizzaAssets
     public static string GetImage(string? name)
     {
         if (name == null) return Placeholder;
-        // TODO: discuss where to define image
+        // TODO 12: discuss where to define image
         switch (name)
         {
             case nameof(Margherita):

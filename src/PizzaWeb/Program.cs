@@ -1,4 +1,4 @@
-// TODO 1: Minimal startup
+// TODO 03: Minimal startup
 
 using PizzaCore.Hubs;
 
@@ -33,9 +33,9 @@ app.UseRouting();
 
 app.MapRazorPages();
 app.MapControllers();
-// TODO map the pizza hub
+// TODO 09: map the pizza hub
 app.MapHub<PizzaHub>(IPizzaHub.HubUrl);
-// TODO For the sake of example switch to a hosted page instead of HTML
+// TODO 06: For the sake of example switch to a hosted page instead of HTML
 // app.MapFallbackToFile("index.html");
 app.MapFallbackToPage("{*path:nonfile}", "/PizzaApp");
 app.Run();

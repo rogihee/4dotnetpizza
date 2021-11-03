@@ -18,7 +18,7 @@ public class PizzaApiService : IPizzaApiService
 
     public Task<List<Pizza>?> Get()
     {
-        // TODO: JsonSourceGenerator
+        // TODO 14: JsonSourceGenerator
 #pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
         return _http.GetFromJsonAsync<List<Pizza>>("api/pizza/"+nameof(IPizzaApiService.Get));
 #pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
