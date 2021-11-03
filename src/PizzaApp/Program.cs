@@ -11,6 +11,8 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 // inject our pizza api service
 builder.Services.AddScoped<IPizzaApiService, PizzaApiService>();
+builder.Services.AddSingleton<IPizzaClient, PizzaClient>();
+
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
 await builder.Build().RunAsync();

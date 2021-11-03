@@ -1,8 +1,7 @@
-﻿namespace PizzaShared.Services
+﻿namespace PizzaShared.Services;
+
+// TODO: define the contract in shared
+public interface IPizzaApiService
 {
-    // TODO: define the contract in shared
-    public interface IPizzaApiService
-    {
-        public Task<List<Pizza>?> Get();
-    }
+    public Task<List<Pizza>?> Get();
 }

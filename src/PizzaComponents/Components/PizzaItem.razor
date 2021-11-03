@@ -1,4 +1,8 @@
-﻿@if (Model != null)
+﻿@inject ILogger<PizzaItem> logger
+
+@implements IDisposable
+
+@if (Model != null)
 {
     var culture = CultureInfo.GetCultureInfo("nl");
     <div class="pizza">
@@ -31,4 +35,24 @@
 {
     [Parameter] 
     public Pizza? Model { get; set; }
+
+    protected override void OnInitialized()
+    {
+        logger.LogInformation($"OnInitialized");
+    }
+    
+    protected override void OnAfterRender(bool firstRender)
+    {
+        logger.LogInformation($"OnAfterRender {firstRender}");
+    }
+
+    protected override void OnParametersSet()
+    {
+        logger.LogInformation($"OnParametersSet");
+    }
+
+    public void Dispose()
+    {
+        logger.LogInformation($"Dispose");
+    }
 }

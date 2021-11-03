@@ -1,4 +1,4 @@
-namespace PizzaShared;
+namespace PizzaShared.Models;
 
 public class WeatherForecast
 {

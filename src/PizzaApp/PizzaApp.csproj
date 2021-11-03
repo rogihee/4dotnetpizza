@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
 	<PropertyGroup>
 		<PublishTrimmed>true</PublishTrimmed>
@@ -9,7 +9,7 @@
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-rc.2.21480.10" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-rc.2.21480.10" PrivateAssets="all" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
-		<PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.Json" Version="5.0.8" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.Json" Version="5.0.11" />
 	</ItemGroup>
 
 	<ItemGroup>

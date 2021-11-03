@@ -1,6 +1,4 @@
-﻿
-using Microsoft.Extensions.DependencyInjection;
-using PizzaCore.Services;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace PizzaCore;
 
@@ -9,11 +7,7 @@ public static class PizzaCoreServiceExtensions
     public static IServiceCollection AddPizzaCoreServices(this IServiceCollection services)
     {
         services.AddSingleton<PizzaCoreService>();
-        //services.AddGovernanceModelServices();
-
-        //services.AddSingleton<GovernanceHub>();
-        //services.AddSingleton<GovernanceHubService>();
-        //services.AddSingleton<GovernanceCoreService>();
+        services.AddSingleton<IPizzaHub, PizzaHub>();
         return services;
     }
 }

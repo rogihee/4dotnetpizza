@@ -1,7 +1,11 @@
 // TODO 1: Minimal startup
+
+using PizzaCore.Hubs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add Pizza core services to the container.
+builder.Services.AddSignalR();
 builder.Services.AddPizzaCoreServices();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
@@ -27,10 +31,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-
 app.MapRazorPages();
 app.MapControllers();
-// For the sake of example switch to a hosted page instead of HTML
+// TODO map the pizza hub
+app.MapHub<PizzaHub>(IPizzaHub.HubUrl);
+// TODO For the sake of example switch to a hosted page instead of HTML
 // app.MapFallbackToFile("index.html");
 app.MapFallbackToPage("{*path:nonfile}", "/PizzaApp");
 app.Run();

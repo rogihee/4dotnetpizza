@@ -1,5 +1,10 @@
 ﻿@page "/pizza"
 
+@implements IAsyncDisposable
+
+@inject ILogger<PizzaPage> logger
+@inject IPizzaClient PizzaClient
+@inject NavigationManager NavigationManager
 @* TODO: watch out with page name, must be different than type *@
 
 @* TODO: new in .NET6: root components *@
@@ -20,6 +25,36 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        logger.LogInformation("OnInitializedAsync");
         Pizzas = await pizzaApiService.Get();
+        await PizzaClient.Connect(NavigationManager.BaseUri);
+        PizzaClient.SonderAngebotEvent += OnSonderAngebotEvent;
+    }
+
+    private void OnSonderAngebotEvent(int id, double price)
+    {
+        Pizzas?.ForEach(x => x.SonderAngebot = false);
+        var pizza = Pizzas?.SingleOrDefault(x => x.Id == id);
+        if (pizza != null)
+        {
+            pizza.SonderAngebot = true;
+            StateHasChanged();
+        }
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        logger.LogInformation($"OnAfterRender {firstRender}");
+    }
+
+    protected override void OnParametersSet()
+    {
+        logger.LogInformation($"OnParametersSet");
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        logger.LogInformation("Dispose");
+        await PizzaClient.Disconnect();
     }
 }

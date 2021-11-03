@@ -7,4 +7,3 @@ public interface IPizza
     public bool SonderAngebot { get; set; }
     public DateOnly AvailableSince { get; set; }
 }
-
